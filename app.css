@@ -7,12 +7,17 @@
 .success {
   background-color: #228b22;
 }
+.btn-clear-all,
 .error {
   background-color: #ec1c01;
 }
 body {
   background-color: whitesmoke;
 }
+.add-movie {
+  color: #ec1c01;
+}
+
 .btn {
   width: 49%;
 }
