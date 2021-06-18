@@ -1,12 +1,47 @@
 .success,
 .error {
-  color: white;
+  color: #fff;
   padding: 5px;
   margin: 5px 0 15px 0;
 }
 .success {
-  background-color: forestgreen;
+  background-color: #228b22;
 }
 .error {
-  background-color: rgb(236, 28, 1);
+  background-color: #ec1c01;
+}
+body {
+  background-color: whitesmoke;
+}
+.btn {
+  width: 49%;
+}
+.heading-movie-list {
+  border: none;
+  background: whitesmoke;
+  color: #021a3d;
+}
+
+.table th {
+  background-color: #021a3d;
+  margin: auto;
+}
+.table a {
+  color: #fff;
+  background-color: #dc3545;
+  padding: 5px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+@media (max-width: 425px) {
+  .table th {
+    display: none;
+  }
+  .table td {
+    display: block;
+  }
+  .table td:last-child {
+    margin-bottom: 10px;
+  }
 }

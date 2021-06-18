@@ -13,107 +13,67 @@
     <link rel="stylesheet" href="app.css" />
     <title>Movie Checker</title>
   </head>
-  <body>
+  <body id="body">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="index.html">Movie Checker</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Movie Genres
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Comedy</a></li>
-                <li><a class="dropdown-item" href="#">Drama</a></li>
-                <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                <li><a class="dropdown-item" href="#">Horror</a></li>
-                <li><a class="dropdown-item" href="#">Mistery</a></li>
-                <li><a class="dropdown-item" href="#">Romance</a></li>
-                <li><a class="dropdown-item" href="#">Thriller</a></li>
-                <li><a class="dropdown-item" href="#">Sci-fi</a></li>
-                <li><hr class="dropdown-divider" /></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
+      
+      </div>
       </div>
     </nav>
-
-    <div class="container pt-5">
+    <div class="container p-3">
       <div class="row justify-content-center">
-        <div class="col-md-4 before">
+        <div class="col-md-8 text-center p-3 wrapper">
           <h3>Add Movie</h3>
-          <form action="" id="movie-form">
-            <label for="title" class="form-label">Movie Title</label>
+          <form action="" id="movie-form" class="before">
+            
             <div class="input-group mb-3">
-              <input type="text" class="form-control" id="title" />
+              <input type="text" class="form-control" id="title" placeholder="Movie Title"/>
             </div>
-            <label for="cast" class="form-label">Cast</label>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" id="cast" />
+              <input type="text" class="form-control" id="cast" placeholder="Cast" />
             </div>
-            <label for="director" class="form-label">Director</label>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" id="director" />
+              <input type="text" class="form-control" id="director" placeholder="Director" />
             </div>
-            <label for="genre" class="form-label">Genres</label>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" id="genre" />
+              <input type="text" class="form-control" id="genre" placeholder="Genre" />
+            </div>
+            <div class="my-5">
+              <button type="submit" class="btn btn-dark">Submit</button>
+              <button type="button" class="btn btn-danger btn-clear-all">
+                Clear
+              </button>
             </div>
             <div>
               <input
-                type="submit"
-                value="Submit"
-                class="btn btn-outline-dark"
+                type="text"
+                id="filter"
+                class="form-control"
+                placeholder="search"
               />
             </div>
           </form>
         </div>
-        <div class="col-md-6">
-          <table class="table mt-4">
-            <thead>
+        <div>
+         
+        </div>
+        <div class="col-md-8 p-3">          
+          <h3 class="heading-movie-list text-center">Movie List</h3>
+          <table class="table table-dark">
+            <thead class="text-center">
               <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Cast</th>
-                <th scope="col">Director</th>
-                <th scope="col">Genres</th>
-                <th scope="col">Code</th>
-                <th scope="col"></th>
-              </tr>
+                <th  class="tex-center">Title</th>
+                <th  class="tex-center">Cast</th>
+                <th  class="tex-center">Director</th>
+                <th  class="tex-center">Genre</th>
+                <th  class="tex-center"></th>
+              </tr>              
             </thead>
-            <tbody id="movie-list"></tbody>
-          </table>
+            <tbody class="text-center" id="movie-list"></tbody>
+          </table> 
+
+                                 
         </div>
       </div>
     </div>
