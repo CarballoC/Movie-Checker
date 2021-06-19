@@ -1,11 +1,13 @@
 class Movie {
-  constructor(title, cast, director, genre) {
+  constructor(title, cast, director, genre, id) {
     this.title = title;
     this.cast = cast;
     this.director = director;
     this.genre = genre;
+    this.id = id;
   }
 }
+
 class UI {
   addMovieToList(movie) {
     const movieList = document.getElementById("movie-list");
@@ -15,6 +17,7 @@ class UI {
   <td>${movie.cast}</td>
   <td>${movie.director}</td>
   <td>${movie.genre}</td>
+  <td>${movie.id}</td>
   <td><a href ="#" class="delete">Delete</a></td> `;
     movieList.appendChild(row);
   }
@@ -36,7 +39,7 @@ class UI {
     document.getElementById("director").value = "";
     document.getElementById("genre").value = "";
   }
-  deleteBook(target) {
+  deleteMovie(target) {
     if (target.className === "delete") {
       target.parentElement.parentElement.remove();
     }
@@ -65,10 +68,10 @@ class Store {
     movies.push(movie);
     localStorage.setItem("movies", JSON.stringify(movies));
   }
-  static removeMovie(genre) {
+  static removeMovie(id) {
     const movies = Store.getMovies();
     movies.forEach(function (movie, index) {
-      if (movie.genre === genre) {
+      if (movie.id === id) {
         movies.splice(index, 1);
       }
     });
@@ -82,8 +85,10 @@ document.getElementById("movie-form").addEventListener("submit", function (e) {
   const cast = document.getElementById("cast").value;
   const director = document.getElementById("director").value;
   const genre = document.getElementById("genre").value;
+  const id = Math.round(Date.now() / 10000) + genre;
+
   // Instatiate a Movie
-  const movie = new Movie(title, cast, director, genre);
+  const movie = new Movie(title, cast, director, genre, id);
   console.log(movie);
 
   // Instatiate UI
@@ -99,10 +104,9 @@ document.getElementById("movie-form").addEventListener("submit", function (e) {
 
   e.preventDefault();
 });
-
 document.getElementById("movie-list").addEventListener("click", function (e) {
   const ui = new UI();
-  ui.deleteBook(e.target);
+  ui.deleteMovie(e.target);
   //remove from local store
   Store.removeMovie(e.target.parentElement.previousElementSibling.textContent);
 
